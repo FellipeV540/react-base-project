@@ -101,7 +101,7 @@ th{
   height: calc(100% - 70px);
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 .login-form{
   padding: 50px;
@@ -131,3 +131,7 @@ th{
   border: none;
   outline: none;
   border-radius: 10px;
+}
+.processo{
+  color:grey;
+}
