@@ -64,7 +64,7 @@ const Home = () => {
       ]
     },
     {
-      tipo: 'Radiosynoviorthesis',
+      tipo: 'Radiosinoviortese',
       rota: '/radiosinoviortese',
       itens: [
         {
@@ -78,7 +78,7 @@ const Home = () => {
       ]
     },
     {
-      tipo: 'Modelagem computacional',
+      tipo: 'Modelagem Computacional',
       rota: '/modelagem',
       itens: [
         {
