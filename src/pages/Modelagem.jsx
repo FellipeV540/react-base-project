@@ -48,6 +48,9 @@ const Modelagem = () => {
               <h3>Clientes</h3>
               <h3>1 Pendente</h3>
           </div>
+          <div className="search-bar">
+                <input type="text" placeholder="Pesquisar..." />
+        </div>
           {dados.map((tipo) => {
               return (
                   <div className="dosimetria-area">
