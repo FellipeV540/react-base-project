@@ -6,11 +6,11 @@
   /* CSS HSL */
   /* https://coolors.co/ */
 
-  --primaria: hsl(210, 67%, 43%);
-  --background: rgb(255, 255, 255);
+  --primaria: hsl(210, 68%, 44%);
+  --background: rgb(254, 254, 254);
   --secundaria: #043454;
-  --destaque: hsla(355, 78%, 56%, 1);
-  --detalhe: hsla(9, 63%, 45%, 1);
+  --destaque: hsla(355, 79%, 57%, 1);
+  --detalhe: hsla(9, 64%, 46%, 1);
 
 
 /*  --primaria: hsla(0, 1%, 20%, 1);
@@ -63,18 +63,18 @@ td, th {
   padding: 8px !important;
 }
 .item-status{
-  color:red;
+  color:rgb(255, 0, 0);
 }
 .status-pendente {
-  color: red;
+  color: rgb(255, 0, 0);
 }
 
 .status-concluido {
-  color: green;
+  color: rgb(0, 128, 0);
 }
 
 .search-bar {
-  margin: 20px 0;
+  margin: 30px 0;
   display: flex;
   justify-content: center;
 }
