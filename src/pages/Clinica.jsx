@@ -43,12 +43,16 @@ const Clinica = () => {
             ]
         },
     ]
+    
     return (
         <Base>
             <h1>Dosimetria Clinica</h1>
             <div className="dosimetria-sub">
                 <h3>Clientes</h3>
                 <h3>1 Pendente</h3>
+            </div>
+            <div className="search-bar">
+                <input type="text" placeholder="Pesquisar..." />
             </div>
             {dados.map((tipo) => {
                 return (
@@ -60,7 +64,7 @@ const Clinica = () => {
                                         <span>
                                             {tipo.clinica}
                                         </span>
-                                        <span className="item-status">
+                                        <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
                                             Status: {tipo.status}
                                         </span>
                                     </th>
