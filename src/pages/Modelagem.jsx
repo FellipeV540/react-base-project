@@ -41,7 +41,7 @@ const Modelagem = () => {
                 'Enviar',
                 'Arquivar'
             ],
-            proecesso: '0004'
+            processo: '0004'
         },
     ]
 
@@ -70,6 +70,9 @@ const Modelagem = () => {
                 <button onClick={() => handleFilterChange('Pendente')}>Pendente</button>
                 <button onClick={() => handleFilterChange('Concluído')}>Concluído</button>
             </div>
+            <div className="search-bar">
+                <input type="text" placeholder="Pesquisar..." />
+            </div>
             {dados.map((tipo) => {
                 return (
                     <div className="dosimetria-area" key={tipo.processo}>
@@ -83,7 +86,7 @@ const Modelagem = () => {
                                         <span className="processo">
                                             Processo: {tipo.processo}
                                         </span>
-                                        <span className="item-status">
+                                        <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
                                             Status: {tipo.status}
                                         </span>
                                     </th>
