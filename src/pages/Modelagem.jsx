@@ -19,7 +19,7 @@ const Modelagem = () => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Concluído',
+            status: 'Pendente',
             itens: [
               'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
               'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -32,7 +32,7 @@ const Modelagem = () => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Concluído',
+            status: 'Pendente',
             itens: [
               'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
               'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -59,7 +59,6 @@ const Modelagem = () => {
             <h1>Modelagem Computacional</h1>
             <div className="dosimetria-sub">
                 <h3>Clientes</h3>
-                <h3>1 Pendente</h3>
                 <h3>{filteredDados.length} {filter}</h3>
             </div>
             <div className="search-bar">
