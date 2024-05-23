@@ -82,7 +82,9 @@ const DosimetriaPreClinica =  () => {
                                         <span>
                                             {tipo.clinica}
                                         </span>
-                                            <p class="processo">Processo #0001</p>
+                                        <span className="processo">
+                                            Processo: {tipo.processo}
+                                        </span>
                                         <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
                                             Status: {tipo.status}
                                         </span>
