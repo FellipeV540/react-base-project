@@ -1,8 +1,9 @@
-import MeuBotao from "../components/MeuBotao/MeuBotao";
+import React, { useState } from 'react';
 import Base from "./Base"
 
-
 const Clinica = () => {
+    const [filter, setFilter] = useState('Todos');
+
     const dados = [
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -42,19 +43,33 @@ const Clinica = () => {
                 'Arquivar'
             ]
         },
-    ]
+    ];
+
+    const handleFilterChange = (newFilter) => {
+        setFilter(newFilter);
+    };
+
+    const filteredDados = dados.filter((item) => {
+        if (filter === 'Todos') return true;
+        return item.status === filter;
+    });
     
     return (
         <Base>
             <h1>Dosimetria Clinica</h1>
             <div className="dosimetria-sub">
                 <h3>Clientes</h3>
-                <h3>1 Pendente</h3>
+                <h3>{filteredDados.length} {filter}</h3>
             </div>
             <div className="search-bar">
                 <input type="text" placeholder="Pesquisar..." />
             </div>
-            {dados.map((tipo) => {
+            <div className="filter-buttons">
+                <button onClick={() => handleFilterChange('Todos')}>Todos</button>
+                <button onClick={() => handleFilterChange('Pendente')}>Pendente</button>
+                <button onClick={() => handleFilterChange('Concluído')}>Concluído</button>
+            </div>
+            {filteredDados.map((tipo) => {
                 return (
                     <div className="dosimetria-area">
                         <table>

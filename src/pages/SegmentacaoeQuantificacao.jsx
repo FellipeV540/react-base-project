@@ -1,6 +1,9 @@
+import React, { useState } from 'react';
 import Base from "./Base";
 
 const SegmentacaoeQuantificacao =() => {
+    const [filter, setFilter] = useState('Todos');
+
     const dados = [
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -37,15 +40,33 @@ const SegmentacaoeQuantificacao =() => {
                 'Arquivar'
             ]
         },
-    ]
+    ];
+
+    const handleFilterChange = (newFilter) => {
+        setFilter(newFilter);
+    };
+
+    const filteredDados = dados.filter((item) => {
+        if (filter === 'Todos') return true;
+        return item.status === filter;
+    });
+
     return (
         <Base>
             <h1>Segmentação e Quantificação</h1>
             <div className="dosimetria-sub">
                 <h3>Clientes</h3>
-                <h3 id="pendencia">1 Pendente</h3>
+                <h3>{filteredDados.length} {filter}</h3>
             </div>
-            {dados.map((tipo) => {
+            <div className="search-bar">
+                  <input type="text" placeholder="Pesquisar..." />
+            </div>
+            <div className="filter-buttons">
+                <button onClick={() => handleFilterChange('Todos')}>Todos</button>
+                <button onClick={() => handleFilterChange('Pendente')}>Pendente</button>
+                <button onClick={() => handleFilterChange('Concluído')}>Concluído</button>
+            </div>
+            {filteredDados.map((tipo) => {
                 return (
                     <div className="dosimetria-area">
                         <table>
@@ -55,7 +76,7 @@ const SegmentacaoeQuantificacao =() => {
                                         <span>
                                             {tipo.clinica}
                                         </span>
-                                        <span className="item-status">
+                                        <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
                                             Status: {tipo.status}
                                         </span>
                                     </th>

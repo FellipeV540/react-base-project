@@ -61,6 +61,9 @@ const Radiosinoviortese = () => {
                 <h3>Clientes</h3>
                 <h3>{filteredDados.length} {filter}</h3>
             </div>
+            <div className="search-bar">
+                  <input type="text" placeholder="Pesquisar..." />
+            </div>
             <div className="filter-buttons">
                 <button onClick={() => handleFilterChange('Todos')}>Todos</button>
                 <button onClick={() => handleFilterChange('Pendente')}>Pendente</button>
@@ -79,7 +82,7 @@ const Radiosinoviortese = () => {
                                         <span className="processo">
                                             Processo: {tipo.processo}
                                         </span>
-                                        <span className="item-status">
+                                        <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
                                             Status: {tipo.status}
                                         </span>
                                     </th>

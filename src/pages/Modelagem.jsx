@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Base from "./Base";
+import Base from './Base';
 
 const Modelagem = () => {
     const [filter, setFilter] = useState('Todos');
@@ -15,7 +15,7 @@ const Modelagem = () => {
             botoes: [
                 'Enviar'
             ],
-            processo: '0002'
+            processo: '0002',
         },
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -59,7 +59,6 @@ const Modelagem = () => {
             <h1>Modelagem Computacional</h1>
             <div className="dosimetria-sub">
                 <h3>Clientes</h3>
-                <h3>1 Pendente</h3>
                 <h3>{filteredDados.length} {filter}</h3>
             </div>
             <div className="search-bar">
@@ -70,7 +69,7 @@ const Modelagem = () => {
                 <button onClick={() => handleFilterChange('Pendente')}>Pendente</button>
                 <button onClick={() => handleFilterChange('Concluído')}>Concluído</button>
             </div>
-            {dados.map((tipo) => {
+            {filteredDados.map((tipo) => {
                 return (
                     <div className="dosimetria-area" key={tipo.processo}>
                         <table>
@@ -83,7 +82,7 @@ const Modelagem = () => {
                                         <span className="processo">
                                             Processo: {tipo.processo}
                                         </span>
-                                        <span className="item-status">
+                                        <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
                                             Status: {tipo.status}
                                         </span>
                                     </th>
