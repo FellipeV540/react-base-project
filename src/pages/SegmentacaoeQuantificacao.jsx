@@ -14,7 +14,8 @@ const SegmentacaoeQuantificacao =() => {
             ],
             botoes: [
                 'Enviar'
-            ]
+            ],
+            processo: '0013',
         },
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -26,7 +27,8 @@ const SegmentacaoeQuantificacao =() => {
             botoes: [
                 'Enviar',
                 'Arquivar'
-            ]
+            ],
+            processo: '0014',
         },
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -38,7 +40,8 @@ const SegmentacaoeQuantificacao =() => {
             botoes: [
                 'Enviar',
                 'Arquivar'
-            ]
+            ],
+            processo: '0015',
         },
     ];
 
