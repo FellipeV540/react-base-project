@@ -6,7 +6,7 @@ const Clinica = () => {
     const dados = [
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Pendente',
+            status: 'Concluído',
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -18,7 +18,7 @@ const Clinica = () => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Concluído',
+            status: 'Pendente',
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -31,7 +31,7 @@ const Clinica = () => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Concluído',
+            status: 'Pendente',
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
