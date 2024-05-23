@@ -70,9 +70,6 @@ const Modelagem = () => {
                 <button onClick={() => handleFilterChange('Pendente')}>Pendente</button>
                 <button onClick={() => handleFilterChange('Concluído')}>Concluído</button>
             </div>
-            <div className="search-bar">
-                <input type="text" placeholder="Pesquisar..." />
-            </div>
             {dados.map((tipo) => {
                 return (
                     <div className="dosimetria-area" key={tipo.processo}>
