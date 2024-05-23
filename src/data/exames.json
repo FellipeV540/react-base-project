@@ -1,0 +1,262 @@
+[
+    {
+        "type": "Dosimetria Clinica",
+        "clinicaId": 1,
+        "status": "Pendente",
+        "itens": [
+            {
+                "id": 1,
+                "description": "Imagem do Cliente",
+                "status": "Pendente",
+                "data": "2020-01-01",
+                "doc": "Image.jpeg"
+            },
+            {
+                "id": 2,
+                "description": "Exame de Sangue",
+                "status": "Concluído",
+                "data": "2020-02-01",
+                "doc": "BloodTest.pdf"
+            }
+        ],
+        "client": {
+            "id": 1,
+            "name": "Joao",
+            "lastName": "Pedro"
+        }
+    },
+    {
+        "type": "Dosimetria Pré-Clinica",
+        "clinicaId": 1,
+        "status": "Concluído",
+        "itens": [
+            {
+                "id": 3,
+                "description": "Relatório de Pesquisa",
+                "status": "Concluído",
+                "data": "2020-03-01",
+                "doc": "ResearchReport.docx"
+            },
+            {
+                "id": 4,
+                "description": "Teste de Laboratório",
+                "status": "Pendente",
+                "data": "2020-04-01",
+                "doc": "LabTest.pdf"
+            }
+        ],
+        "client": {
+            "id": 2,
+            "name": "Maria",
+            "lastName": "Silva"
+        }
+    },
+    {
+        "type": "Modelagem Computacional",
+        "clinicaId": 2,
+        "status": "Em Progresso",
+        "itens": [
+            {
+                "id": 5,
+                "description": "Modelo 3D de Tumor",
+                "status": "Em Progresso",
+                "data": "2020-05-01",
+                "doc": "3DTumorModel.stl"
+            },
+            {
+                "id": 6,
+                "description": "Simulação de Radiação",
+                "status": "Concluído",
+                "data": "2020-06-01",
+                "doc": "RadiationSimulation.pdf"
+            }
+        ],
+        "client": {
+            "id": 3,
+            "name": "Carlos",
+            "lastName": "Souza"
+        }
+    },
+    {
+        "type": "Radiosinoviorte",
+        "clinicaId": 2,
+        "status": "Pendente",
+        "itens": [
+            {
+                "id": 7,
+                "description": "Plano de Tratamento",
+                "status": "Pendente",
+                "data": "2020-07-01",
+                "doc": "TreatmentPlan.pdf"
+            },
+            {
+                "id": 8,
+                "description": "Relatório de Procedimento",
+                "status": "Pendente",
+                "data": "2020-08-01",
+                "doc": "ProcedureReport.pdf"
+            }
+        ],
+        "client": {
+            "id": 4,
+            "name": "Ana",
+            "lastName": "Oliveira"
+        }
+    },
+    {
+        "type": "Segmentação e Quantificação",
+        "clinicaId": 3,
+        "status": "Concluído",
+        "itens": [
+            {
+                "id": 9,
+                "description": "Segmentação de Imagem",
+                "status": "Concluído",
+                "data": "2020-09-01",
+                "doc": "ImageSegmentation.jpeg"
+            },
+            {
+                "id": 10,
+                "description": "Análise Quantitativa",
+                "status": "Pendente",
+                "data": "2020-10-01",
+                "doc": "QuantitativeAnalysis.xlsx"
+            }
+        ],
+        "client": {
+            "id": 5,
+            "name": "Lucas",
+            "lastName": "Fernandes"
+        }
+    },
+    {
+        "type": "Dosimetria Clinica",
+        "clinicaId": 3,
+        "status": "Em Progresso",
+        "itens": [
+            {
+                "id": 11,
+                "description": "Consulta de Rotina",
+                "status": "Em Progresso",
+                "data": "2020-11-01",
+                "doc": "RoutineCheck.pdf"
+            },
+            {
+                "id": 12,
+                "description": "Teste de Urina",
+                "status": "Concluído",
+                "data": "2020-12-01",
+                "doc": "UrineTest.docx"
+            }
+        ],
+        "client": {
+            "id": 6,
+            "name": "Mariana",
+            "lastName": "Alves"
+        }
+    },
+    {
+        "type": "Dosimetria Pré-Clinica",
+        "clinicaId": 4,
+        "status": "Concluído",
+        "itens": [
+            {
+                "id": 13,
+                "description": "Relatório de Testes Animais",
+                "status": "Concluído",
+                "data": "2020-01-01",
+                "doc": "AnimalTests.pdf"
+            },
+            {
+                "id": 14,
+                "description": "Resultados de Culturas",
+                "status": "Pendente",
+                "data": "2020-02-01",
+                "doc": "CultureResults.docx"
+            }
+        ],
+        "client": {
+            "id": 7,
+            "name": "Bruno",
+            "lastName": "Gomes"
+        }
+    },
+    {
+        "type": "Modelagem Computacional",
+        "clinicaId": 4,
+        "status": "Pendente",
+        "itens": [
+            {
+                "id": 15,
+                "description": "Simulação de Dose",
+                "status": "Pendente",
+                "data": "2020-03-01",
+                "doc": "DoseSimulation.pdf"
+            },
+            {
+                "id": 16,
+                "description": "Modelo de Órgão",
+                "status": "Concluído",
+                "data": "2020-04-01",
+                "doc": "OrganModel.stl"
+            }
+        ],
+        "client": {
+            "id": 8,
+            "name": "Sofia",
+            "lastName": "Lima"
+        }
+    },
+    {
+        "type": "Radiosinoviorte",
+        "clinicaId": 5,
+        "status": "Em Progresso",
+        "itens": [
+            {
+                "id": 17,
+                "description": "Avaliação Pré-Tratamento",
+                "status": "Em Progresso",
+                "data": "2020-05-01",
+                "doc": "PreTreatmentEvaluation.pdf"
+            },
+            {
+                "id": 18,
+                "description": "Imagens Pós-Procedimento",
+                "status": "Concluído",
+                "data": "2020-06-01",
+                "doc": "PostProcedureImages.jpeg"
+            }
+        ],
+        "client": {
+            "id": 9,
+            "name": "Renata",
+            "lastName": "Martins"
+        }
+    },
+    {
+        "type": "Segmentação e Quantificação",
+        "clinicaId": 5,
+        "status": "Pendente",
+        "itens": [
+            {
+                "id": 19,
+                "description": "Análise de Volume",
+                "status": "Pendente",
+                "data": "2020-07-01",
+                "doc": "VolumeAnalysis.pdf"
+            },
+            {
+                "id": 20,
+                "description": "Segmentação 3D",
+                "status": "Concluído",
+                "data": "2020-08-01",
+                "doc": "3DSegmentation.stl"
+            }
+        ],
+        "client": {
+            "id": 10,
+            "name": "Gabriel",
+            "lastName": "Santos"
+        }
+    }
+]

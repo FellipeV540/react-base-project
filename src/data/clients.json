@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "clinica": "Clinica 1",
+        "exams": [
+            {
+                "type": "Dosimetria Clinica",
+                "id": 1
+            },
+            {
+                "type": "Dosimetria Pré-Clinica",
+                "id": 3
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "clinica": "Clinica 2",
+        "exams": [
+            {
+                "type": "Modelagem Computacional",
+                "id": 5
+            },
+            {
+                "type": "Radiosinoviorte",
+                "id": 7
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "clinica": "Clinica 3",
+        "exams": [
+            {
+                "type": "Segmentação e Quantificação",
+                "id": 9
+            },
+            {
+                "type": "Dosimetria Clinica",
+                "id": 11
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "clinica": "Clinica 4",
+        "exams": [
+            {
+                "type": "Dosimetria Pré-Clinica",
+                "id": 13
+            },
+            {
+                "type": "Modelagem Computacional",
+                "id": 15
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "clinica": "Clinica 5",
+        "exams": [
+            {
+                "type": "Radiosinoviorte",
+                "id": 17
+            },
+            {
+                "type": "Segmentação e Quantificação",
+                "id": 19
+            }
+        ]
+    }
+]

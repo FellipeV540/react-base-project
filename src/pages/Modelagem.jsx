@@ -19,7 +19,7 @@ const Modelagem = () => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Pendente',
+            status: 'Concluído',
             itens: [
               'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
               'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -32,7 +32,7 @@ const Modelagem = () => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Pendente',
+            status: 'Concluído',
             itens: [
               'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
               'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -41,7 +41,7 @@ const Modelagem = () => {
                 'Enviar',
                 'Arquivar'
             ],
-            processo: '0004'
+            proecesso: '0004'
         },
     ]
 
@@ -59,6 +59,7 @@ const Modelagem = () => {
             <h1>Modelagem Computacional</h1>
             <div className="dosimetria-sub">
                 <h3>Clientes</h3>
+                <h3>1 Pendente</h3>
                 <h3>{filteredDados.length} {filter}</h3>
             </div>
             <div className="search-bar">
@@ -82,7 +83,7 @@ const Modelagem = () => {
                                         <span className="processo">
                                             Processo: {tipo.processo}
                                         </span>
-                                        <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
+                                        <span className="item-status">
                                             Status: {tipo.status}
                                         </span>
                                     </th>

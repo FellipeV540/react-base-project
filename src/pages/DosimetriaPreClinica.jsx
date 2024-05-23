@@ -1,6 +1,6 @@
 import Base from "./Base";
 
-const DosimetriaPreClinica = () => {
+const DosimetriaPreClinica =  () => {
     const dados = [
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -29,7 +29,7 @@ const DosimetriaPreClinica = () => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Pendente',
+            status: 'Concluído',
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -47,21 +47,18 @@ const DosimetriaPreClinica = () => {
                 <h3>Clientes</h3>
                 <h3>1 Pendente</h3>
             </div>
-            <div className="search-bar">
-                <input type="text" placeholder="Pesquisar..." />
-            </div>
             {dados.map((tipo) => {
                 return (
                     <div className="dosimetria-area">
                         <table>
                             <thead>
                                 <tr>
-                                    <th className={tipo.status === 'Concluído' ? 'linha-verde' : ''}>
+                                    <th>
                                         <span>
                                             {tipo.clinica}
                                         </span>
                                             <p class="processo">Processo #0001</p>
-                                        <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
+                                        <span className="item-status">
                                             Status: {tipo.status}
                                         </span>
                                     </th>

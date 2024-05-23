@@ -19,7 +19,7 @@ const Radiosinoviortese = () => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Pendente',
+            status: 'Concluído',
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -32,7 +32,7 @@ const Radiosinoviortese = () => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Pendente',
+            status: 'Concluído',
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -63,11 +63,8 @@ const Radiosinoviortese = () => {
             </div>
             <div className="filter-buttons">
                 <button onClick={() => handleFilterChange('Todos')}>Todos</button>
-                <button onClick={() => handleFilterChange('Pendentes')}>Pendentes</button>
-                <button onClick={() => handleFilterChange('Concluídos')}>Concluídos</button>
-            </div>
-            <div className="search-bar">
-                <input type="text" placeholder="Pesquisar..." />
+                <button onClick={() => handleFilterChange('Pendente')}>Pendente</button>
+                <button onClick={() => handleFilterChange('Concluído')}>Concluído</button>
             </div>
             {filteredDados.map((tipo) => {
                 return (
@@ -82,7 +79,7 @@ const Radiosinoviortese = () => {
                                         <span className="processo">
                                             Processo: {tipo.processo}
                                         </span>
-                                        <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
+                                        <span className="item-status">
                                             Status: {tipo.status}
                                         </span>
                                     </th>

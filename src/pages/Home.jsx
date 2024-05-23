@@ -1,141 +1,90 @@
-import { onAuthStateChanged } from "firebase/auth"
-import Base from "./Base"
-import { auth } from "../config/Firebase";
-import { useEffect } from "react";
-import MeuBotao from "../components/MeuBotao/MeuBotao";
-import { Link } from 'react-router-dom'
-const Home = () => {
+import React from 'react';
+import { RiHospitalLine, RiBookOpenLine, RiComputerLine, RiScissors2Line } from 'react-icons/ri';
+import Base from './Base';
+import styled from 'styled-components';
+import ModuleCard from '../components/ModuleCard/ModuleCard';
+import exames from '../data/exames.json';
 
-  /* useEffect(()=> {
-    onAuthStateChanged(auth, (user)=> {
-      if (user) {
-        window.sessionStorage.setItem("accessToken", user.accessToken);
-      } else {
-        window.sessionStorage.removeItem("accessToken");
-      }
-    })
-  },[]) */
-  
-  const dados = [
-    {
-      tipo: 'Dosimetria Clínica',
-      rota: '/clinica',
-      itens: [
-        {
-          nome: 'Clínica Lorem',
-          status: 'Pendente'
-        },
-        {
-          nome: 'Clínica Ipsun',
-          status: 'Pendente',
-        },
-      ]
-    },
-    {
-      tipo: 'Dosimetria Pré-Clínica',
-      rota: '/dosimetriapreclinica',
-      itens: [
-        {
-          nome: 'Clínica Lorem',
-          status: 'Pendente'
-        },
-        {
-          nome: 'Clínica Ipsun',
-          status: 'Pendente',
-        },
-      ]
-    },
-    {
-      tipo: 'Segmentação e Quantificação',
-      rota: '/segmentacaoequantificacao',
-      itens: [
-        {
-          nome: 'Clínica Lorem',
-          status: 'Pendente'
-        },
-        {
-          nome: 'Clínica Ipsun',
-          status: 'Pendente',
-        },
-        {
-          nome: 'Clínica Lorem Ipsun',
-          status: 'Pendente'
-        },
-      ]
-    },
-    {
-      tipo: 'Radiosinoviortese',
-      rota: '/radiosinoviortese',
-      itens: [
-        {
-          nome: 'Clínica Lorem',
-          status: 'Pendente'
-        },
-        {
-          nome: 'Clínica Ipsun',
-          status: 'Pendente',
-        },
-      ]
-    },
-    {
-      tipo: 'Modelagem Computacional',
-      rota: '/modelagem',
-      itens: [
-        {
-          nome: 'Clínica Lorem',
-          status: 'Pendente'
-        },
-        {
-          nome: 'Clínica Ipsun',
-          status: 'Pendente',
-        },
-      ]
-    },
-  ]
+
+
+const Container = styled.article`
+
+  .logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .module-cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin-inline: auto;
+    gap: 40px;
+  }
+
+  .welcome-message {
+    text-align: center;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 40px;
+  }
+`;
+
+const Home = () => {
+  const calculatePendingProcesses = (type) => {
+    return exames
+      .filter(item => item.type === type)
+      .reduce((acc, curr) => acc + curr.itens.filter(item => item.status === 'Pendente').length, 0);
+  };
 
   return (
     <Base>
-      <div>
-        <h1>
-        CLÍNICA DOSIMAGEM
-        </h1>
+      <Container>
+        <img className="logo" src={process.env.PUBLIC_URL + 'imagens/DosimagemLOGO.png'} alt="Logo" />
 
-      </div>
-      <div className="search-bar">
-                <input type="text" placeholder="Pesquisar..." />
-            </div>
-      {dados.map((tipo) => {
-        return (
-          <table>
-            <thead>
-              <tr>
-                <th>
-                  <Link to={tipo.rota} className="link-home">
-                  <span>
-                    {tipo.tipo}
-                  </span>
-                  </Link>
-                  
-                  <span className="item-status">
-                    Status: {tipo.itens.length} pendentes
-                  </span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {tipo.itens.map((item) => {
-                return (
-                  <tr>
-                    <td>{item.nome} - {item.status}</td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        )
-      })}
+        <h2 className="welcome-message">Bem-vindo ao Portal de Dosimetria</h2>
+        <p className="welcome-message">
+          Sua central de acesso a ferramentas e informações relevantes para o seu dia a dia na área de dosimetria.
+        </p>
+
+        <div className="module-cards-container">
+          <ModuleCard 
+            moduleName="Dosimetria Clínica" 
+            icon={<RiHospitalLine />} 
+            route="/clinica" 
+            processosEmAberto={calculatePendingProcesses("Dosimetria Clinica")} 
+          />
+          <ModuleCard 
+            moduleName="Dosimetria Pré-Clínica" 
+            icon={<RiHospitalLine />} 
+            route="/dosimetriapreclinica" 
+            processosEmAberto={calculatePendingProcesses("Dosimetria Pré-Clinica")} 
+          />
+          <ModuleCard 
+            moduleName="Modelagem Computacional" 
+            icon={<RiComputerLine />} 
+            route="/modelagem" 
+            processosEmAberto={calculatePendingProcesses("Modelagem Computacional")} 
+          />
+          <ModuleCard 
+            moduleName="Radiosinoviortese" 
+            icon={<RiBookOpenLine />} 
+            route="/radiosinoviortese" 
+            processosEmAberto={calculatePendingProcesses("Radiosinoviorte")} 
+          />
+          <ModuleCard 
+            moduleName="Segmentação e Quantificação" 
+            icon={<RiScissors2Line />} 
+            route="/SegmentacaoeQuantificacao" 
+            processosEmAberto={calculatePendingProcesses("Segmentação e Quantificação")} 
+          />
+        </div>
+      </Container>
     </Base>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
