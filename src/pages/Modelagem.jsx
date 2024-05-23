@@ -3,10 +3,11 @@ import Base from './Base';
 
 const Modelagem = () => {
     const [filter, setFilter] = useState('Todos');
+    const [searchTerm, setSearchTerm] = useState('');
 
     const dados = [
         {
-            clinica: 'Clínica Lorem Ipsun',
+            clinica: 'Clínica Bruno',
             status: 'Pendente',
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
@@ -18,7 +19,7 @@ const Modelagem = () => {
             processo: '0007',
         },
         {
-            clinica: 'Clínica Lorem Ipsun',
+            clinica: 'Clínica Pedro',
             status: 'Concluído',
             itens: [
               'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
@@ -31,7 +32,7 @@ const Modelagem = () => {
             processo: '0008'
         },
         {
-            clinica: 'Clínica Lorem Ipsun',
+            clinica: 'Clínica Whinderson',
             status: 'Concluído',
             itens: [
               'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
@@ -49,9 +50,16 @@ const Modelagem = () => {
         setFilter(newFilter);
     };
 
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
     const filteredDados = dados.filter((item) => {
-        if (filter === 'Todos') return true;
-        return item.status === filter;
+        const matchesFilter = filter === 'Todos' || item.status === filter;
+        const matchesSearchTerm = item.clinica.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            item.processo.includes(searchTerm) ||
+            item.itens.some(it => it.toLowerCase().includes(searchTerm.toLowerCase()));
+        return matchesFilter && matchesSearchTerm;
     });
 
     return (
@@ -62,7 +70,12 @@ const Modelagem = () => {
                 <h3>{filteredDados.length} {filter}</h3>
             </div>
             <div className="search-bar">
-                  <input type="text" placeholder="Pesquisar..." />
+                  <input
+                    type="text"
+                    placeholder="Pesquisar..."
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                />
           </div>
           <div className="filter-buttons">
                 <button onClick={() => handleFilterChange('Todos')}>Todos</button>
