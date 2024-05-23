@@ -15,7 +15,7 @@ const SegmentacaoeQuantificacao =() => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Concluído',
+            status: 'Pendente',
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -27,7 +27,7 @@ const SegmentacaoeQuantificacao =() => {
         },
         {
             clinica: 'Clínica Lorem Ipsun',
-            status: 'Concluído',
+            status: 'Pendente',
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
@@ -43,7 +43,10 @@ const SegmentacaoeQuantificacao =() => {
             <h1>Segmentação e Quantificação</h1>
             <div className="dosimetria-sub">
                 <h3>Clientes</h3>
-                <h3 id="pendencia">1 Pendente</h3>
+                <h3 id="pendencia">3 Todos</h3>
+            </div>
+            <div className="search-bar">
+                <input type="text" placeholder="Pesquisar..." />
             </div>
             {dados.map((tipo) => {
                 return (
