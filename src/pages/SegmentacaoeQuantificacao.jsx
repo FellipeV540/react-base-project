@@ -79,6 +79,9 @@ const SegmentacaoeQuantificacao =() => {
                                         <span>
                                             {tipo.clinica}
                                         </span>
+                                        <span className="processo">
+                                            Processo: {tipo.processo}
+                                        </span>
                                         <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
                                             Status: {tipo.status}
                                         </span>
