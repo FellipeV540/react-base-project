@@ -15,7 +15,7 @@ const Modelagem = () => {
             botoes: [
                 'Enviar'
             ],
-            processo: '0002',
+            processo: '0007',
         },
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -28,7 +28,7 @@ const Modelagem = () => {
                 'Enviar',
                 'Arquivar'
             ],
-            processo: '0003'
+            processo: '0008'
         },
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -41,7 +41,7 @@ const Modelagem = () => {
                 'Enviar',
                 'Arquivar'
             ],
-            proecesso: '0004'
+            processo: '0009'
         },
     ]
 
