@@ -15,7 +15,8 @@ const Radiosinoviortese = () => {
             botoes: [
                 'Enviar'
             ],
-            processo: '0001',
+            processo: '0010',
+
         },
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -28,7 +29,7 @@ const Radiosinoviortese = () => {
                 'Enviar',
                 'Arquivar'
             ],
-            processo: '0002',
+            processo: '0011',
         },
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -41,7 +42,7 @@ const Radiosinoviortese = () => {
                 'Enviar',
                 'Arquivar'
             ],
-            processo: '0003'
+            processo: '0012'
         },
     ];
 
