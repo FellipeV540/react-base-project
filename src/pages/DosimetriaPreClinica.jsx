@@ -11,11 +11,13 @@ const DosimetriaPreClinica =  () => {
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
-                
+
             ],
             botoes: [
                 'Enviar'
-            ]
+            ],
+            processo: '0004',
+
         },
         {
             clinica: 'Clínica Lorem Ipsun',
@@ -23,8 +25,9 @@ const DosimetriaPreClinica =  () => {
             itens: [
                 'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
                 'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
-                
+
             ],
+            processo: '0005',
             botoes: [
                 'Enviar',
                 'Arquivar'
@@ -40,7 +43,8 @@ const DosimetriaPreClinica =  () => {
             botoes: [
                 'Enviar',
                 'Arquivar'
-            ]
+            ],
+            processo: '0006',
         },
     ];
 
