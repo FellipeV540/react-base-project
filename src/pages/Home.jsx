@@ -101,6 +101,9 @@ const Home = () => {
         </h1>
 
       </div>
+      <div className="search-bar">
+                <input type="text" placeholder="Pesquisar..." />
+            </div>
       {dados.map((tipo) => {
         return (
           <table>
