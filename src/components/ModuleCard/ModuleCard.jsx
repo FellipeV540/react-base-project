@@ -27,14 +27,14 @@ const ModuleCardContainer = styled.div`
   }
 
   .moduleName {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
     color: #333;
     margin-bottom: 5px;
   }
 
   .processosEmAberto {
-    font-size: 16px;
+    font-size: 14px;
     color: #424242;
   }
 `;
