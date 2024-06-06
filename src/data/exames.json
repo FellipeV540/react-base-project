@@ -39,7 +39,7 @@
             },
             {
                 "id": 4,
-                "description": "Teste de Laboratório",
+                "description": "Clínica 1",
                 "status": "Pendente",
                 "data": "2020-04-01",
                 "doc": "LabTest.pdf"
@@ -91,7 +91,7 @@
             },
             {
                 "id": 8,
-                "description": "Relatório de Procedimento",
+                "description": "Clínica 2",
                 "status": "Pendente",
                 "data": "2020-08-01",
                 "doc": "ProcedureReport.pdf"
@@ -117,7 +117,7 @@
             },
             {
                 "id": 10,
-                "description": "Análise Quantitativa",
+                "description": "Clínica 3",
                 "status": "Pendente",
                 "data": "2020-10-01",
                 "doc": "QuantitativeAnalysis.xlsx"
@@ -169,7 +169,7 @@
             },
             {
                 "id": 14,
-                "description": "Resultados de Culturas",
+                "description": "Clínica 4",
                 "status": "Pendente",
                 "data": "2020-02-01",
                 "doc": "CultureResults.docx"
@@ -247,14 +247,14 @@
             },
             {
                 "id": 20,
-                "description": "Segmentação 3D",
+                "description": "Clínica 5",
                 "status": "Concluído",
                 "data": "2020-08-01",
                 "doc": "3DSegmentation.stl"
             },
             {
                 "id": 21,
-                "description": "Segmentação 3D",
+                "description": "Clínica 5",
                 "status": "Pendente",
                 "data": "2020-08-01",
                 "doc": "3DSegmentation.stl"
