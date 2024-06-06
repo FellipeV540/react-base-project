@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - DosImagem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>DosImagem</h1>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="services">
+            <h2>Nossos Serviços</h2>
+            <div class="service">
+                <h3>Ultrassonografia</h3>
+                <p>Descrição do serviço de ultrassonografia...</p>
+            </div>
+            <div class="service">
+                <h3>Ressonância Magnética</h3>
+                <p>Descrição do serviço de ressonância magnética...</p>
+            </div>
+            <div class="service">
+                <h3>Tomografia Computadorizada</h3>
+                <p>Descrição do serviço de tomografia computadorizada...</p>
+            </div>
+        </section>
+        <section class="dashboard">
+            <h2>Dashboard</h2>
+            <div class="stats">
+                <div class="stat">
+                    <h3>Pacientes Atendidos</h3>
+                    <p id="pacientesAtendidos">0</p>
+                </div>
+                <div class="stat">
+                    <h3>Exames Realizados</h3>
+                    <p id="examesRealizados">0</p>
+                </div>
+                <div class="stat">
+                    <h3>Feedback Positivo</h3>
+                    <p id="feedbackPositivo">0%</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
