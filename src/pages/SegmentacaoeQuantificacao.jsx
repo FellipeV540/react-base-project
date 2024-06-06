@@ -117,7 +117,6 @@ const SegmentacaoeQuantificacao =() => {
     return (
         <Base>
       <Container>
-        <img className="logo" src={process.env.PUBLIC_URL + 'imagens/DosimagemLOGO.png'} alt="Logo" />
 
         <h2 className="welcome-message">Segmentação e Quantificação</h2>
         <p className="welcome-message">
