@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { RiDownloadLine, RiUploadLine, RiDeleteBinLine } from 'react-icons/ri';
+import { RiDownloadLine, RiUploadLine, RiDeleteBinLine, RiFolderDownloadLine } from 'react-icons/ri';
 import Base from './Base';
 import styled from 'styled-components';
 import exames from '../data/exames.json';
@@ -78,17 +78,15 @@ const Container = styled.article`
 const SegmentacaoeQuantificacao = () => {
   const [filter, setFilter] = useState('Todos');
   const [searchTerm, setSearchTerm] = useState('');
-  const [uploadedFiles, setUploadedFiles] = useState({});
-
-  const fileInputRef = useRef(null);
-
-  const dados = [
+  const [dados, setDados] = useState([
     { nome: 'Clinica Albert', status: 'Pendente', id: '#134' },
     { nome: 'Clinica Albert', status: 'Concluído', id: '#138' },
     { nome: 'Clinica Robert', status: 'Pendente', id: '#142' },
     { nome: 'Clinica Roberto', status: 'Concluído', id: '#145' },
     { nome: 'Clinica André', status: 'Concluído', id: '#150' },
-  ];
+  ]);
+
+  const fileInputRef = useRef(null);
 
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
@@ -102,8 +100,29 @@ const SegmentacaoeQuantificacao = () => {
     if (action === 'upload') {
       fileInputRef.current.click();
       fileInputRef.current.dataset.id = id;
-    } else {
-      console.log(`Action: ${action}, ID: ${id}`);
+    } else if (action === 'calibracao' || action === 'download') {
+      setDados((prevDados) =>
+        prevDados.map((item) =>
+          item.id === id ? { ...item, status: 'Em Andamento' } : item
+        )
+      );
+    } else if (action === 'arquivar') {
+      const item = dados.find(item => item.id === id);
+      if (item.status === 'Concluído') {
+        setDados((prevDados) =>
+          prevDados.map((item) =>
+            item.id === id ? { ...item, status: 'Arquivado' } : item
+          )
+        );
+      } else {
+        alert('Não é possível arquivar processos não concluídos.');
+      }
+    } else if (action === 'desarquivar') {
+      setDados((prevDados) =>
+        prevDados.map((item) =>
+          item.id === id ? { ...item, status: 'Pendente' } : item
+        )
+      );
     }
   };
 
@@ -111,17 +130,24 @@ const SegmentacaoeQuantificacao = () => {
     const file = event.target.files[0];
     if (file) {
       const id = event.target.dataset.id;
-      const fileURL = URL.createObjectURL(file);
-      setUploadedFiles((prevFiles) => ({
-        ...prevFiles,
-        [id]: fileURL,
-      }));
+      setDados((prevDados) =>
+        prevDados.map((item) =>
+          item.id === id ? { ...item, status: 'Concluído' } : item
+        )
+      );
     }
   };
 
   const filteredDados = dados.filter((item) => {
-    const matchesFilter = filter === 'Todos' || item.status === filter;
-    const matchesSearchTerm = item.nome.toLowerCase().includes(searchTerm.toLowerCase()) || item.id.includes(searchTerm);
+    const matchesFilter =
+      filter === 'Todos'
+        ? item.status !== 'Arquivado'
+        : filter === 'Arquivados'
+        ? item.status === 'Arquivado'
+        : item.status === filter;
+    const matchesSearchTerm =
+      item.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.id.includes(searchTerm);
     return matchesFilter && matchesSearchTerm;
   });
 
@@ -144,6 +170,8 @@ const SegmentacaoeQuantificacao = () => {
           <button onClick={() => handleFilterChange('Todos')}>Todos</button>
           <button onClick={() => handleFilterChange('Pendente')}>Pendente</button>
           <button onClick={() => handleFilterChange('Concluído')}>Concluído</button>
+          <button onClick={() => handleFilterChange('Em Andamento')}>Em Andamento</button>
+          <button onClick={() => handleFilterChange('Arquivados')}>Arquivados</button>
         </div>
         <div className="module-cards-container">
           <div className="table-area">
@@ -156,8 +184,7 @@ const SegmentacaoeQuantificacao = () => {
                   <th>Imagem Paciente</th>
                   <th>Enviar Relatório</th>
                   <th>Status</th>
-                  <th>Arquivar</th>
-                  <th>Imagem</th>
+                  {filter === 'Arquivados' ? <th>Desarquivar</th> : <th>Arquivar</th>}
                 </tr>
               </thead>
               <tbody>
@@ -166,29 +193,45 @@ const SegmentacaoeQuantificacao = () => {
                     <td>{item.nome}</td>
                     <td>{item.id}</td>
                     <td>
-                      <button className="action-button" onClick={() => handleActionClick('calibracao', item.id)}>
+                      <button
+                        className="action-button"
+                        onClick={() => handleActionClick('calibracao', item.id)}
+                      >
                         <RiDownloadLine size={24} />
                       </button>
                     </td>
                     <td>
-                      <button className="action-button" onClick={() => handleActionClick('upload', item.id)}>
-                        <RiUploadLine size={24} />
+                      <button
+                        className="action-button"
+                        onClick={() => handleActionClick('download', item.id)}
+                      >
+                        <RiDownloadLine size={24} />
                       </button>
                     </td>
                     <td>
-                      <button className="action-button" onClick={() => handleActionClick('enviar_relatorio', item.id)}>
+                      <button
+                        className="action-button"
+                        onClick={() => handleActionClick('upload', item.id)}
+                      >
                         <RiUploadLine size={24} />
                       </button>
                     </td>
                     <td>{item.status}</td>
                     <td>
-                      <button className="action-button" onClick={() => handleActionClick('arquivar', item.id)}>
-                        <RiDeleteBinLine size={24} />
-                      </button>
-                    </td>
-                    <td>
-                      {uploadedFiles[item.id] && (
-                        <a href={uploadedFiles[item.id]} target="_blank" rel="noopener noreferrer">Ver Imagem</a>
+                      {filter === 'Arquivados' ? (
+                        <button
+                          className="action-button"
+                          onClick={() => handleActionClick('desarquivar', item.id)}
+                        >
+                          <RiFolderDownloadLine size={24} />
+                        </button>
+                      ) : (
+                        <button
+                          className="action-button"
+                          onClick={() => handleActionClick('arquivar', item.id)}
+                        >
+                          <RiDeleteBinLine size={24} />
+                        </button>
                       )}
                     </td>
                   </tr>
