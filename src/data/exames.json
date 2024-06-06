@@ -78,11 +78,12 @@
         }
     },
     {
-        "type": "Radiosinoviorte",
+        "type": "Radiosinoviortese",
         "clinicaId": 2,
         "status": "Pendente",
         "itens": [
             {
+                "nomeClinica": "Clinica Albert",
                 "id": 7,
                 "description": "Plano de Tratamento",
                 "status": "Pendente",
@@ -90,6 +91,7 @@
                 "doc": "TreatmentPlan.pdf"
             },
             {
+                "nomeClinica": "Clinica Albert",
                 "id": 8,
                 "description": "Clínica 2",
                 "status": "Pendente",
@@ -208,11 +210,12 @@
         }
     },
     {
-        "type": "Radiosinoviorte",
+        "type": "Radiosinoviortese",
         "clinicaId": 5,
         "status": "Em Progresso",
         "itens": [
             {
+                "nomeClinica": "Clinica Robert",
                 "id": 17,
                 "description": "Avaliação Pré-Tratamento",
                 "status": "Em Progresso",
@@ -220,6 +223,7 @@
                 "doc": "PreTreatmentEvaluation.pdf"
             },
             {
+                "nomeClinica": "Clinica André",
                 "id": 18,
                 "description": "Imagens Pós-Procedimento",
                 "status": "Concluído",
