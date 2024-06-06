@@ -11,6 +11,12 @@
   /* https://coolors.co/ */
 
   --primaria: hsl(210, 68%, 44%);
+  --primaria-hover: hsl(210, 66%, 31%);
+  --leve: hsl(209, 23%, 51%);
+  --leve-hover: hsl(210, 30%, 40%);
+
+
+
   --background: rgb(254, 254, 254);
   --secundaria: #043454;
   --destaque: hsla(355, 79%, 57%, 1);

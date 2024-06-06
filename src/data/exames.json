@@ -251,6 +251,20 @@
                 "status": "Concluído",
                 "data": "2020-08-01",
                 "doc": "3DSegmentation.stl"
+            },
+            {
+                "id": 21,
+                "description": "Segmentação 3D",
+                "status": "Pendente",
+                "data": "2020-08-01",
+                "doc": "3DSegmentation.stl"
+            },
+            {
+                "id": 22,
+                "description": "Análise de Volume",
+                "status": "Pendente",
+                "data": "2020-07-01",
+                "doc": "VolumeAnalysis.pdf"
             }
         ],
         "client": {
