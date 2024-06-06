@@ -89,11 +89,34 @@ const Home = () => {
             ))}
           </div> */}
           </div>
-          <p className="message">
-            Novos Procedimentos Pendentes
-          </p>
-          <RecentItemsTable exames={exames} />
+          <div className='table-area'>
+            <table>
+              <tr>
+                <th>Serviços</th>
+                <th>ID</th>
+                <th>Para Calibração</th>
+                <th>Imagem Paciente</th>
+                <th>Enviar Relatório</th>
+                <th>Status</th>
+                <th>Arquivar</th>
+              </tr>
+              {dados.map((item) => (
+                <tr>
+                  <td> <img src={process.env.PUBLIC_URL + item.icon} alt="Imagem não Carregou" /></td>
+                  <td>{item.id}</td>
+                  <td><img src={process.env.PUBLIC_URL + 'imagens/icones/icon-5.png'} alt="Imagem não Carregou" /></td>
+                  <td><img src={process.env.PUBLIC_URL + 'imagens/icones/icon-5.png'} alt="Imagem não Carregou" /></td>
+                  <td><img src={process.env.PUBLIC_URL + 'imagens/icones/icon-6.png'} alt="Imagem não Carregou" /></td>
+                  <td>{item.status}</td>
+                  <td><img src={process.env.PUBLIC_URL + 'imagens/icones/icon-7.png'} alt="Imagem não Carregou" /></td>
+                </tr>
+              ))}
+            </table>
+           <div className='table-rodape'> <h4>Serviços Pendentes 15</h4>
+           <h4>Serviços Concluídos 32</h4>
+           </div>
           
+          </div>
         </div>
       </Container>
     </Base>
