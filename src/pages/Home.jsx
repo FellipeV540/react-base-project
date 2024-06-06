@@ -27,7 +27,7 @@ const Container = styled.article`
   th{
     display:table-cell;
     font-weight:normal;
-    
+
   }
   tr{
     background-color:white;
@@ -157,10 +157,10 @@ const Home = () => {
                 </tr>
               ))}
             </table>
-           <div className='table-rodape'> <h4>Serviços Pendentes 15</h4>
+           <div className='table-rodape'> <h4>Serviços Pendentes 8</h4>
            <h4>Serviços Concluídos 32</h4>
            </div>
-          
+
           </div>
         </div>
       </Container>
