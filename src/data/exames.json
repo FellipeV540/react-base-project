@@ -144,6 +144,7 @@
                 "doc": "RoutineCheck.pdf"
             },
             {
+                "nomeClinica": "Clinica Leon",
                 "id": 12,
                 "description": "Teste de Urina",
                 "status": "Concluído",
@@ -163,6 +164,7 @@
         "status": "Concluído",
         "itens": [
             {
+                "nomeClinica": "Clinica Eduardo",
                 "id": 13,
                 "description": "Relatório de Testes Animais",
                 "status": "Concluído",
@@ -170,6 +172,7 @@
                 "doc": "AnimalTests.pdf"
             },
             {
+                "nomeClinica": "Clinica Jailson",
                 "id": 14,
                 "description": "Clínica 4",
                 "status": "Pendente",
@@ -189,6 +192,7 @@
         "status": "Pendente",
         "itens": [
             {
+                "nomeClinica": "Clinica Manuela",
                 "id": 15,
                 "description": "Simulação de Dose",
                 "status": "Pendente",
@@ -196,6 +200,7 @@
                 "doc": "DoseSimulation.pdf"
             },
             {
+                "nomeClinica": "Clinica Luana",
                 "id": 16,
                 "description": "Modelo de Órgão",
                 "status": "Concluído",
@@ -243,6 +248,7 @@
         "status": "Pendente",
         "itens": [
             {
+                "nomeClinica": "Clinica Julia",
                 "id": 19,
                 "description": "Análise de Volume",
                 "status": "Pendente",
@@ -250,6 +256,7 @@
                 "doc": "VolumeAnalysis.pdf"
             },
             {
+                "nomeClinica": "Clinica Victor",
                 "id": 20,
                 "description": "Clínica 5",
                 "status": "Concluído",
@@ -257,6 +264,7 @@
                 "doc": "3DSegmentation.stl"
             },
             {
+                "nomeClinica": "Clinica Hwang",
                 "id": 21,
                 "description": "Clínica 5",
                 "status": "Pendente",
@@ -264,6 +272,7 @@
                 "doc": "3DSegmentation.stl"
             },
             {
+                "nomeClinica": "Clinica Epstien",
                 "id": 22,
                 "description": "Análise de Volume",
                 "status": "Pendente",
