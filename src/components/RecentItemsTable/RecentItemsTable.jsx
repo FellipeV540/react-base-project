@@ -53,8 +53,13 @@ const StyledTable = styled.table`
     font-weight: 800;
     color: var(--leve);
   }
+<<<<<<< HEAD
   .info {
     color: gray;
+=======
+  .info{
+    color: black;
+>>>>>>> e0b1d2819ac6cab8620cff4eee6805d6b58fae6f
     padding: 10px;
     font-size: 14px;
   }
