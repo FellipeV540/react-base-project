@@ -3,7 +3,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 
 import Home from "./pages/Home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import { auth } from "./config/Firebase";
@@ -27,7 +27,7 @@ onAuthStateChanged(auth, (user)=> {
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
@@ -38,6 +38,6 @@ root.render(
         <Route path="/SegmentacaoeQuantificacao" element={<SegmentacaoeQuantificacao/>} />
         <Route path="/dosimetriapreclinica" element={<DosimetriaPreClinica/>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );

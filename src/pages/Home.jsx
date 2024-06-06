@@ -71,13 +71,17 @@ const Home = () => {
             Sua central de acesso a ferramentas e informações relevantes para o
             seu dia a dia na área de dosimetria.
           </p>
-          <Modules></Modules>
           <p className="message">
             Novos Procedimentos Pendentes
           </p>
           <RecentItemsTable exames={exames}/>
         </div>
       </Container>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Modules></Modules>
     </Base>
   );
 };
