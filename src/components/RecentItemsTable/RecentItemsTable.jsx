@@ -58,7 +58,7 @@ const StyledTable = styled.table`
     color: var(--leve);
   }
   .info{
-    color: gray;
+    color: black;
     padding: 10px;
     font-size: 14px;
   }
@@ -137,9 +137,6 @@ const RecentItemsTable = (props) => {
               ))}
             </tbody>
           </table>
-            <p className="dots">
-                . . .
-            </p>
             <p className="info">para ver mais, acesse algum modulo acima</p>
         </div>
       </StyledTable>
