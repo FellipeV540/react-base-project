@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { RiDownloadLine, RiUploadLine, RiDeleteBinLine, RiFolderDownloadLine } from 'react-icons/ri';
+import { RiDownloadLine, RiUploadLine, RiDeleteBinLine, RiFolderDownloadLine, RiArchiveLine, RiInboxUnarchiveLine } from 'react-icons/ri';
 import Base from './Base';
 import styled from 'styled-components';
-import exames from '../data/exames.json';
+import DropdownStatus from '../components/status/DropdownStatus';
 
 const Container = styled.article`
   .logo {
@@ -13,56 +13,54 @@ const Container = styled.article`
 
   .module-cards-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
     max-width: 1300px;
     margin-inline: auto;
     gap: 40px;
   }
   th {
     display: table-cell;
-    font-weight: normal;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  th {
+    background-color: #f4f4f4;
   }
   tr {
-    background-color: white;
-    padding: 5px;
-    border: none;
-    border-radius: 10px;
+    background-color: #fff;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
   }
   .table-area {
-    padding: 10px;
-    background-color: #bfbfbf;
-    border-radius: 20px;
-    color: black;
-  }
-  .table-rodape {
-    display: flex;
-    justify-content: space-between;
-  }
-  .table-area div {
-    background-color: white;
-    padding: 5px;
+    padding: 20px;
+    background-color: #fff;
     border-radius: 10px;
-    margin-bottom: 5px;
-    font-size: 20px;
-  }
-  .welcome-message {
-    text-align: center;
-    font-size: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: black;
-    margin-bottom: 40px;
   }
-  .search-bar {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .filter-buttons {
+  .welcome-message, .search-bar, .filter-buttons, .table-rodape {
     text-align: center;
     margin-bottom: 20px;
   }
   .filter-buttons button {
     margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(209, 23%, 51%);
+    color: #fff;
+    cursor: pointer;
+  }
+  .filter-buttons button:hover {
+    background-color: #0056b3;
   }
   .action-button {
     cursor: pointer;
@@ -74,6 +72,12 @@ const Container = styled.article`
     outline: none;
   }
 `;
+
+const ActionButton = ({ action, onClick, icon }) => (
+  <button className="action-button" onClick={onClick}>
+    {icon}
+  </button>
+);
 
 const SegmentacaoeQuantificacao = () => {
   const [filter, setFilter] = useState('Todos');
@@ -88,35 +92,28 @@ const SegmentacaoeQuantificacao = () => {
 
   const fileInputRef = useRef(null);
 
-  const handleFilterChange = (newFilter) => {
-    setFilter(newFilter);
-  };
+  const handleFilterChange = (newFilter) => setFilter(newFilter);
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
+  const handleSearchChange = (event) => setSearchTerm(event.target.value);
+
+  const handleStatusChange = (id, newStatus) => {
+    setDados((prevDados) =>
+      prevDados.map((item) =>
+        item.id === id ? { ...item, status: newStatus } : item
+      )
+    );
   };
 
   const handleActionClick = (action, id) => {
     if (action === 'upload') {
       fileInputRef.current.click();
       fileInputRef.current.dataset.id = id;
-    } else if (action === 'calibracao' || action === 'download') {
+    } else if (action === 'arquivar') {
       setDados((prevDados) =>
         prevDados.map((item) =>
-          item.id === id ? { ...item, status: 'Em Andamento' } : item
+          item.id === id ? { ...item, status: 'Arquivado' } : item
         )
       );
-    } else if (action === 'arquivar') {
-      const item = dados.find(item => item.id === id);
-      if (item.status === 'Concluído') {
-        setDados((prevDados) =>
-          prevDados.map((item) =>
-            item.id === id ? { ...item, status: 'Arquivado' } : item
-          )
-        );
-      } else {
-        alert('Não é possível arquivar processos não concluídos.');
-      }
     } else if (action === 'desarquivar') {
       setDados((prevDados) =>
         prevDados.map((item) =>
@@ -175,6 +172,10 @@ const SegmentacaoeQuantificacao = () => {
         </div>
         <div className="module-cards-container">
           <div className="table-area">
+          <div className="table-rodape">
+              <h4>Serviços Pendentes {filteredDados.filter(item => item.status === 'Pendente').length}</h4>
+              <h4>Serviços Concluídos {filteredDados.filter(item => item.status === 'Concluído').length}</h4>
+            </div>
             <table>
               <thead>
                 <tr>
@@ -193,55 +194,51 @@ const SegmentacaoeQuantificacao = () => {
                     <td>{item.nome}</td>
                     <td>{item.id}</td>
                     <td>
-                      <button
-                        className="action-button"
+                      <ActionButton
+                        action="calibracao"
                         onClick={() => handleActionClick('calibracao', item.id)}
-                      >
-                        <RiDownloadLine size={24} />
-                      </button>
+                        icon={<RiDownloadLine size={24} />}
+                      />
                     </td>
                     <td>
-                      <button
-                        className="action-button"
+                      <ActionButton
+                        action="download"
                         onClick={() => handleActionClick('download', item.id)}
-                      >
-                        <RiDownloadLine size={24} />
-                      </button>
+                        icon={<RiDownloadLine size={24} />}
+                      />
                     </td>
                     <td>
-                      <button
-                        className="action-button"
+                      <ActionButton
+                        action="upload"
                         onClick={() => handleActionClick('upload', item.id)}
-                      >
-                        <RiUploadLine size={24} />
-                      </button>
+                        icon={<RiUploadLine size={24} />}
+                      />
                     </td>
-                    <td>{item.status}</td>
+                    <td>
+                      <DropdownStatus
+                        currentStatus={item.status}
+                        onStatusChange={(newStatus) => handleStatusChange(item.id, newStatus)}
+                      />
+                    </td>
                     <td>
                       {filter === 'Arquivados' ? (
-                        <button
-                          className="action-button"
+                        <ActionButton
+                          action="desarquivar"
                           onClick={() => handleActionClick('desarquivar', item.id)}
-                        >
-                          <RiFolderDownloadLine size={24} />
-                        </button>
+                          icon={<RiInboxUnarchiveLine size={24} />}
+                        />
                       ) : (
-                        <button
-                          className="action-button"
+                        <ActionButton
+                          action="arquivar"
                           onClick={() => handleActionClick('arquivar', item.id)}
-                        >
-                          <RiDeleteBinLine size={24} />
-                        </button>
+                          icon={<RiArchiveLine size={24} />}
+                        />
                       )}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <div className="table-rodape">
-              <h4>Serviços Pendentes {filteredDados.filter(item => item.status === 'Pendente').length}</h4>
-              <h4>Serviços Concluídos {filteredDados.filter(item => item.status === 'Concluído').length}</h4>
-            </div>
           </div>
         </div>
         <input
