@@ -1,90 +1,55 @@
+import React from 'react';
 import Base from "./Base";
+import styled from "styled-components";
+import exames from "../data/exames.json";
+import RecentItemsTable from "../components/RecentItemsTable/RecentItemsTable";
 
-const DosimetriaPreClinica =  () => {
-    const dados = [
-        {
-            clinica: 'Clínica Lorem Ipsun',
-            status: 'Pendente',
-            itens: [
-                '20240-04-19-19:39:54.jpeg',
-                '20240-04-19-19:39:54.jpeg',
-                '20240-04-19-19:39:54.jpeg',
-            ],
-            botoes: [
-                'Enviar'
-            ]
-        },
-        {
-            clinica: 'Clínica Lorem Ipsun',
-            status: 'Concluído',
-            itens: [
-                '20240-04-19-19:39:54.jpeg',
-                '20240-04-19-19:39:54.jpeg',
-                '20240-04-19-19:39:54.jpeg',
-            ],
-            botoes: [
-                'Enviar',
-                'Arquivar'
-            ]
-        },
-        {
-            clinica: 'Clínica Lorem Ipsun',
-            status: 'Concluído',
-            itens: [
-                '20240-04-19-19:39:54.jpeg',
-                '20240-04-19-19:39:54.jpeg',
-                '20240-04-19-19:39:54.jpeg',
-            ],
-            botoes: [
-                'Enviar',
-                'Arquivar'
-            ]
-        },
-    ]
+const Container = styled.article`
+  .content {
+    padding-inline: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .module-cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin-inline: auto;
+    gap: 30px;
+  }
+
+  .message {
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    margin: 0px;
+  }
+`;
+
+const DosimetriaPreClinica = () => {
+    // Filtrar exames do tipo "Dosimetria Pré-Clínica"
+    const DosiPreClinicaExames = exames.filter(exame => exame.type === "Dosimetria Pré-Clinica");
+
     return (
         <Base>
-            <h1>Dosimetria Pré-Clinica</h1>
-            <div className="dosimetria-sub">
-                <h3>Clientes</h3>
-                <h3>1 Pendente</h3>
-            </div>
-            {dados.map((tipo) => {
-                return (
-                    <div className="dosimetria-area">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span>
-                                            {tipo.clinica}
-                                        </span>
-                                        <span className="item-status">
-                                            Status: {tipo.status}
-                                        </span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {tipo.itens.map((item) => {
-                                    return (
-                                        <tr>
-                                            <td className="item-img"><span>{item}</span><a href="">Download</a> </td>
-                                        </tr>
-                                    )
-                                })}
-                            </tbody>
-                        </table>
-                        <div className="btn-area">
-                            {tipo.botoes.map((item) => {
-                                return (
-                                    <button>{item}</button>
-                                )
-                            })}
-                        </div>
-                    </div>
-                )
-            })}
+            <Container>
+                <div className="content">
+                    <h2 className="message">PROCESSOS DE DOSIMETRIA PRÉ-CLÍNICA</h2>
+                    <p className="message">
+                        Aqui você pode acessar todos os procedimentos de Dosimetria Pré-Clínica.
+                    </p>
+                    <p className="message">
+                        Todos os Procedimentos
+                    </p>
+                    <RecentItemsTable exames={DosiPreClinicaExames} />
+                </div>
+            </Container>
         </Base>
     );
-}
+};
+
 export default DosimetriaPreClinica;

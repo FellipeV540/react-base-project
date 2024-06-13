@@ -1,25 +1,48 @@
 import { Link } from "react-router-dom";
 import { Top } from "./Style";
 import Dropdown from "../Dropdown/Dropdown";
-import Calibracoes from "../../pages/Calibracoes";
+import styled from "styled-components";
+
+const HeaderStyled = styled.div`
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 30px;
+  .left{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+    height: 100px
+    
+  }
+
+  .logo {
+    width: 200px;
+    height: auto;
+  }
+`;
 
 const Header = () => (
-  <Top className="top-area">
+  <HeaderStyled>
+    <div className="left">
+    <img
+      className="logo"
+      src={process.env.PUBLIC_URL + "imagens/DosimagemLOGO.png"}
+      alt="Logo"
+    />
+      <Dropdown />
+    </div>
 
-  <div>
-    <Link to="/">Home</Link>
-    <Link to="/calibracoes">Calibrações</Link>
-    <Dropdown /></div>
-    
-  <div className="login">
-    { window.sessionStorage.getItem('accessToken')
-    ? <Link to="/logout">Logout</Link>
-    : <Link to="/login">Login</Link>
-    }
-  </div>
-
-    
-  </Top>
-)
+    <div className="login">
+      {window.sessionStorage.getItem("accessToken") ? (
+        <Link to="/logout">Logout</Link>
+      ) : (
+        <Link to="/login">Login</Link>
+      )}
+    </div>
+  </HeaderStyled>
+);
 
 export default Header;

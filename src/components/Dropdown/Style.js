@@ -6,28 +6,24 @@ const Button = styled.a`
 .dropdown {
   display: inline-block;
   position: relative;
-  background-color: var(--secundaria);
   border:none;
+  padding: 10px
 }
 
-span{
-  border:none;
-  cursor:pointer;
-  color: var(--background);
-}
-
-p:hover{
-  background-color:#ddd;
+.menu{
+  color: var(--secundaria);
+ font-size: 30px;
+ line-height: 0
+ 
 }
 
 .dropdown-options {
   display: none;
   position: absolute;
-  margin-left:-90px;
+  margin-top: 10px;
   overflow: auto;
-  background-color: var(--secundaria);
-  border:none;
-  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  background-color: var(--leve);
+  border-radius: 10px
 }
 
 .dropdown:hover .dropdown-options {
@@ -36,7 +32,7 @@ p:hover{
 
 .dropdown-options a {
   display: block;
-  
+  color: white;
   padding: 5px;
   text-decoration: none;
   padding:20px 40px;
