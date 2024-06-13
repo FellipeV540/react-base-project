@@ -46,7 +46,7 @@ const ModuleCard = ({ moduleName, icon, route, processosEmAberto, className }) =
         <div className="icon">{icon}</div>
         <div>
           <div className="moduleName">{moduleName}</div>
-          <span className="processosEmAberto">Processos em Aberto: <span>{processosEmAberto}</span></span>
+          <span className="processosEmAberto">Processos Pendentes: <span>{processosEmAberto}</span></span>
         </div>
       </ModuleCardContainer>
     </Link>

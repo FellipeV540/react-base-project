@@ -13,6 +13,7 @@ import Modelagem from "./pages/Modelagem";
 import Radiosinoviortese from "./pages/Radiosinoviortese";
 import SegmentacaoeQuantificacao from "./pages/SegmentacaoeQuantificacao";
 import DosimetriaPreClinica from "./pages/DosimetriaPreClinica";
+import Processos from "./pages/processo";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -37,6 +38,7 @@ root.render(
         <Route path="/radiosinoviortese" element={<Radiosinoviortese/>} />
         <Route path="/SegmentacaoeQuantificacao" element={<SegmentacaoeQuantificacao/>} />
         <Route path="/dosimetriapreclinica" element={<DosimetriaPreClinica/>} />
+        <Route path="/processo/:id" element={<Processos/>} />
       </Routes>
     </HashRouter>
   </React.StrictMode>

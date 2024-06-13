@@ -8,6 +8,8 @@
                 "nomeClinica": "Clínica Àlvaro",
                 "id": 1,
                 "description": "Imagem do Cliente",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-01-01",
                 "doc": "Image.jpeg"
@@ -16,6 +18,8 @@
                 "nomeClinica": "Clínica Dias",
                 "id": 2,
                 "description": "Exame de Sangue",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Concluído",
                 "data": "2020-02-01",
                 "doc": "BloodTest.pdf"
@@ -36,6 +40,8 @@
                 "nomeClinica": "Clínica Bittencourt",
                 "id": 3,
                 "description": "Relatório de Pesquisa",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Concluído",
                 "data": "2020-03-01",
                 "doc": "ResearchReport.docx"
@@ -44,6 +50,8 @@
                 "nomeClinica": "Clínica Chequer",
                 "id": 4,
                 "description": "Clínica 1",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-04-01",
                 "doc": "LabTest.pdf"
@@ -64,7 +72,9 @@
                 "nomeClinica": "Clínica Paes",
                 "id": 5,
                 "description": "Modelo 3D de Tumor",
-                "status": "Em Progresso",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
+                "status": "Em Andamento",
                 "data": "2020-05-01",
                 "doc": "3DTumorModel.stl"
             },
@@ -72,6 +82,8 @@
                 "nomeClinica": "Clínica Soares",
                 "id": 6,
                 "description": "Simulação de Radiação",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Concluído",
                 "data": "2020-06-01",
                 "doc": "RadiationSimulation.pdf"
@@ -89,10 +101,12 @@
         "status": "Pendente",
         "itens": [
             {
-                
+
                 "nomeClinica": "Clinica Pereira",
                 "id": 7,
                 "description": "Plano de Tratamento",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-07-01",
                 "doc": "TreatmentPlan.pdf"
@@ -101,6 +115,8 @@
                 "nomeClinica": "Clinica Albert",
                 "id": 8,
                 "description": "Clínica 2",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-08-01",
                 "doc": "ProcedureReport.pdf"
@@ -121,6 +137,8 @@
                 "nomeClinica": "Clínica Mendes",
                 "id": 9,
                 "description": "Segmentação de Imagem",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Concluído",
                 "data": "2020-09-01",
                 "doc": "ImageSegmentation.jpeg"
@@ -129,6 +147,8 @@
                 "nomeClinica": "Clínica Luccas",
                 "id": 10,
                 "description": "Clínica 3",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-10-01",
                 "doc": "QuantitativeAnalysis.xlsx"
@@ -149,7 +169,9 @@
                 "nomeClinica": "Clínica Rodolffo",
                 "id": 11,
                 "description": "Consulta de Rotina",
-                "status": "Em Progresso",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
+                "status": "Em Andamento",
                 "data": "2020-11-01",
                 "doc": "RoutineCheck.pdf"
             },
@@ -157,6 +179,8 @@
                 "nomeClinica": "Clinica Leon",
                 "id": 12,
                 "description": "Teste de Urina",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Concluído",
                 "data": "2020-12-01",
                 "doc": "UrineTest.docx"
@@ -177,6 +201,8 @@
                 "nomeClinica": "Clinica Eduardo",
                 "id": 13,
                 "description": "Relatório de Testes Animais",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Concluído",
                 "data": "2020-01-01",
                 "doc": "AnimalTests.pdf"
@@ -185,6 +211,8 @@
                 "nomeClinica": "Clinica Jailson",
                 "id": 14,
                 "description": "Clínica 4",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-02-01",
                 "doc": "CultureResults.docx"
@@ -205,6 +233,8 @@
                 "nomeClinica": "Clinica Manuela",
                 "id": 15,
                 "description": "Simulação de Dose",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-03-01",
                 "doc": "DoseSimulation.pdf"
@@ -213,6 +243,8 @@
                 "nomeClinica": "Clinica Luana",
                 "id": 16,
                 "description": "Modelo de Órgão",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Concluído",
                 "data": "2020-04-01",
                 "doc": "OrganModel.stl"
@@ -233,7 +265,9 @@
                 "nomeClinica": "Clinica Robert",
                 "id": 17,
                 "description": "Avaliação Pré-Tratamento",
-                "status": "Em Progresso",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
+                "status": "Em Andamento",
                 "data": "2020-05-01",
                 "doc": "PreTreatmentEvaluation.pdf"
             },
@@ -241,6 +275,8 @@
                 "nomeClinica": "Clinica André",
                 "id": 18,
                 "description": "Imagens Pós-Procedimento",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Concluído",
                 "data": "2020-06-01",
                 "doc": "PostProcedureImages.jpeg"
@@ -261,6 +297,8 @@
                 "nomeClinica": "Clinica Julia",
                 "id": 19,
                 "description": "Análise de Volume",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-07-01",
                 "doc": "VolumeAnalysis.pdf"
@@ -269,6 +307,8 @@
                 "nomeClinica": "Clinica Victor",
                 "id": 20,
                 "description": "Clínica 5",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Concluído",
                 "data": "2020-08-01",
                 "doc": "3DSegmentation.stl"
@@ -277,6 +317,8 @@
                 "nomeClinica": "Clinica Hwang",
                 "id": 21,
                 "description": "Clínica 5",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-08-01",
                 "doc": "3DSegmentation.stl"
@@ -285,6 +327,8 @@
                 "nomeClinica": "Clinica Epstien",
                 "id": 22,
                 "description": "Análise de Volume",
+                "imgPaciente": "arquivo provisorio",
+                "imgCalibração": "arquivo provisorio2",
                 "status": "Pendente",
                 "data": "2020-07-01",
                 "doc": "VolumeAnalysis.pdf"

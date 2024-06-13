@@ -1,130 +1,55 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Base from "./Base";
+import styled from "styled-components";
+import exames from "../data/exames.json";
+import RecentItemsTable from "../components/RecentItemsTable/RecentItemsTable";
 
-const DosimetriaPreClinica =  () => {
-    const [filter, setFilter] = useState('Todos');
-    const [searchTerm, setSearchTerm] = useState('');
+const Container = styled.article`
+  .content {
+    padding-inline: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    const dados = [
-        {
-            clinica: 'Clínica Artenio',
-            status: 'Pendente',
-            itens: [
-                'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
-                'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
+  .module-cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin-inline: auto;
+    gap: 30px;
+  }
 
-            ],
-            botoes: [
-                'Enviar'
-            ],
-            processo: '0004',
+  .message {
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    margin: 0px;
+  }
+`;
 
-        },
-        {
-            clinica: 'Clínica Shannyquá',
-            status: 'Concluído',
-            itens: [
-                'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
-                'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
-
-            ],
-            processo: '0005',
-            botoes: [
-                'Enviar',
-                'Arquivar'
-            ]
-        },
-        {
-            clinica: 'Clínica Pereira',
-            status: 'Concluído',
-            itens: [
-                'Imagem do Cliente :20240-04-19-19:39:54.jpeg',
-                'Imagem para Calibrar: 20240-04-19-19:39:54.jpeg',
-            ],
-            botoes: [
-                'Enviar',
-                'Arquivar'
-            ],
-            processo: '0006',
-        },
-    ];
-
-    const handleFilterChange = (newFilter) => {
-        setFilter(newFilter);
-    };
-
-    const handleSearchChange = (event) => {
-        setSearchTerm(event.target.value);
-    };
-
-    const filteredDados = dados.filter((item) => {
-        const matchesFilter = filter === 'Todos' || item.status === filter;
-        const matchesSearchTerm = item.clinica.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.processo.includes(searchTerm) ||
-            item.itens.some(it => it.toLowerCase().includes(searchTerm.toLowerCase()));
-        return matchesFilter && matchesSearchTerm;
-    });
+const DosimetriaPreClinica = () => {
+    // Filtrar exames do tipo "Dosimetria Pré-Clínica"
+    const DosiPreClinicaExames = exames.filter(exame => exame.type === "Dosimetria Pré-Clinica");
 
     return (
         <Base>
-            <h1>Dosimetria Pré-Clinica</h1>
-            <div className="dosimetria-sub">
-                <h3>Clientes</h3>
-                <h3>{filteredDados.length} {filter}</h3>
-            </div>
-            <div className="search-bar">
-            <input
-                    type="text"
-                    placeholder="Pesquisar..."
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                />
-            </div>
-            <div className="filter-buttons">
-                <button onClick={() => handleFilterChange('Todos')}>Todos</button>
-                <button onClick={() => handleFilterChange('Pendente')}>Pendente</button>
-                <button onClick={() => handleFilterChange('Concluído')}>Concluído</button>
-            </div>
-            {filteredDados.map((tipo) => {
-                return (
-                    <div className="dosimetria-area">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span>
-                                            {tipo.clinica}
-                                        </span>
-                                        <span className="processo">
-                                            Processo: {tipo.processo}
-                                        </span>
-                                        <span className={`item-status ${tipo.status === 'Pendente' ? 'status-pendente' : 'status-concluido'}`}>
-                                            Status: {tipo.status}
-                                        </span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {tipo.itens.map((item) => {
-                                    return (
-                                        <tr>
-                                            <td className="item-img"><span>{item}</span><a href="">Download</a> </td>
-                                        </tr>
-                                    )
-                                })}
-                            </tbody>
-                        </table>
-                        <div className="btn-area">
-                            {tipo.botoes.map((item) => {
-                                return (
-                                    <button>{item}</button>
-                                )
-                            })}
-                        </div>
-                    </div>
-                )
-            })}
+            <Container>
+                <div className="content">
+                    <h2 className="message">PROCESSOS DE DOSIMETRIA PRÉ-CLÍNICA</h2>
+                    <p className="message">
+                        Aqui você pode acessar todos os procedimentos de Dosimetria Pré-Clínica.
+                    </p>
+                    <p className="message">
+                        Todos os Procedimentos
+                    </p>
+                    <RecentItemsTable exames={DosiPreClinicaExames} />
+                </div>
+            </Container>
         </Base>
     );
-}
+};
+
 export default DosimetriaPreClinica;

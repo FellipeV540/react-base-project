@@ -1,24 +1,15 @@
-import React, { useState } from 'react';
-import {
-    RiHospitalLine,
-    RiBookOpenLine,
-    RiComputerLine,
-    RiScissors2Line,
-} from "react-icons/ri";
+import React from 'react';
 import Base from "./Base";
 import styled from "styled-components";
-import ModuleCard from "../components/ModuleCard/ModuleCard";
 import exames from "../data/exames.json";
-import Modules from "../components/Modules/Modules";
 import RecentItemsTable from "../components/RecentItemsTable/RecentItemsTable";
-import { IconButton } from "../components/Buttons/Buttons";
 
 const Container = styled.article`
   .content {
     padding-inline: 200px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 15px;
   }
 
   .module-cards-container {

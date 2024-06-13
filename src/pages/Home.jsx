@@ -18,7 +18,7 @@ const Container = styled.article`
     padding-inline: 200px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 15px;
   }
 
   .module-cards-container {
