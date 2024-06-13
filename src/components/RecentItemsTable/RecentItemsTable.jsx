@@ -9,8 +9,7 @@ import {
 } from "react-icons/ri";
 import { IconButton } from "../Buttons/Buttons";
 import { useNavigate } from "react-router-dom";
-import { handleDownloadFile } from "../utils"; // Importe a função
-import examesData from "../../data/exames.json";
+import { handleDownloadFile } from "../utils";
 
 const StyledTable = styled.table`
   width: 100%;
@@ -39,11 +38,11 @@ const StyledTable = styled.table`
   }
 
   tr:nth-child(even) {
-    background-color: #f2f2f2; /* Cor de fundo para linhas pares */
+    background-color: #f2f2f2;
   }
 
   tr:nth-child(odd) {
-    background-color: #ffffff; /* Cor de fundo para linhas ímpares */
+    background-color: #ffffff;
   }
 
   .dots {
@@ -124,10 +123,10 @@ const FilterButtons = ({ onFilterChange }) => (
   </FilterButtonsWrapper>
 );
 
-const RecentItemsTable = () => {
+const RecentItemsTable = ({ exames }) => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
-  const [exames, setExames] = useState(examesData);
+  const [localExames, setLocalExames] = useState(exames);
   const [filter, setFilter] = useState("Todos");
   const [searchTerm, setSearchTerm] = useState("");
   const [showAlert, setShowAlert] = useState(false);
@@ -135,7 +134,7 @@ const RecentItemsTable = () => {
 
   const countPendingProcesses = () => {
     let count = 0;
-    exames.forEach((item) => {
+    localExames.forEach((item) => {
       count += item.itens.filter((it) => it.status === "Pendente").length;
     });
     return count;
@@ -143,7 +142,7 @@ const RecentItemsTable = () => {
 
   const countCompletedProcesses = () => {
     let count = 0;
-    exames.forEach((item) => {
+    localExames.forEach((item) => {
       count += item.itens.filter((it) => it.status === "Concluído").length;
     });
     return count;
@@ -162,33 +161,32 @@ const RecentItemsTable = () => {
   };
 
   const handleArchiveProcess = (examId, itemId) => {
-    const exam = exames.find((exam) => exam.id === examId);
-    const item = exam.itens.find((item) => item.id === itemId);
-
-    if (item.status !== "Concluído") {
-      setShowAlert(true);
-      setAlertMessage("Só é possível arquivar um processo concluído.");
-      return;
-    }
-
-    setExames((prevExames) =>
-      prevExames.map((exam) =>
-        exam.id === examId
-          ? {
-              ...exam,
-              itens: exam.itens.map((item) =>
-                item.id === itemId && item.status === "Concluído"
-                  ? { ...item, status: "Arquivado", previousStatus: item.status }
-                  : item
-              ),
+    const updatedExames = localExames.map((exam) => {
+      if (exam.id === examId) {
+        return {
+          ...exam,
+          itens: exam.itens.map((item) => {
+            if (item.id === itemId) {
+              if (item.status === "Concluído") {
+                return { ...item, status: "Arquivado", previousStatus: item.status };
+              } else {
+                setShowAlert(true);
+                setAlertMessage("Só é possível arquivar um processo concluído.");
+                return item;
+              }
             }
-          : exam
-      )
-    );
+            return item;
+          })
+        };
+      }
+      return exam;
+    });
+
+    setLocalExames(updatedExames);
   };
 
   const handleUnarchiveProcess = (examId, itemId) => {
-    setExames((prevExames) =>
+    setLocalExames((prevExames) =>
       prevExames.map((exam) =>
         exam.id === examId
           ? {
@@ -197,14 +195,14 @@ const RecentItemsTable = () => {
                 item.id === itemId
                   ? { ...item, status: item.previousStatus || "Pendente" }
                   : item
-              ),
+              )
             }
           : exam
       )
     );
   };
 
-  const filteredExames = exames
+  const filteredExames = localExames
     .map((item) => ({
       ...item,
       itens: item.itens.filter(
@@ -212,7 +210,8 @@ const RecentItemsTable = () => {
           ((filter === "Todos" && it.status !== "Arquivado") ||
             it.status === filter) &&
           (it.nomeClinica.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            it.id.toString().includes(searchTerm))
+            it.id.toString().includes(searchTerm) ||
+            it.data.includes(searchTerm))
       ),
     }))
     .filter((item) => item.itens.length > 0);
@@ -230,11 +229,15 @@ const RecentItemsTable = () => {
       const timeout = setTimeout(() => {
         setShowAlert(false);
         setAlertMessage("");
-      }, 1000); // Tempo em milissegundos (1 segundo)
+      }, 1000);
 
       return () => clearTimeout(timeout);
     }
   }, [showAlert]);
+
+  useEffect(() => {
+    setLocalExames(exames);
+  }, [exames]);
 
   return (
     <>
@@ -259,24 +262,20 @@ const RecentItemsTable = () => {
       <StyledTable>
         <div className="table-container">
           <table>
-          <thead>
-  <tr>
-    <th>Serviço</th>
-    <th>Nome da Clínica</th>
-    <th>ID</th>
-    <th>Data</th>
-    <th>Imagem Paciente</th>
-    <th>Imagem Calibração</th>
-    <th>Status</th>
-    <th>Enviar Relatório</th>
-    <th>Acessar</th>
-    {filter === "Arquivado" ? (
-      <th>Desarquivar</th>
-    ) : (
-      <th>Arquivar</th>
-    )}
-  </tr>
-</thead>
+            <thead>
+              <tr>
+                <th>Serviço</th>
+                <th>Nome da Clínica</th>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Imagem Paciente</th>
+                <th>Imagem Calibração</th>
+                <th>Status</th>
+                <th>Enviar Relatório</th>
+                <th>Acessar</th>
+                {filter === "Arquivado" ? <th>Desarquivar</th> : <th>Arquivar</th>}
+              </tr>
+            </thead>
             <tbody>
               {filteredExames.map((item, index) =>
                 item.itens.map((it, idx) => (
@@ -300,11 +299,7 @@ const RecentItemsTable = () => {
                       <IconButton onClick={handleFileUploadClick}>
                         <RiFileUploadLine />
                       </IconButton>
-                      <input
-                        type="file"
-                        ref={fileInputRef}
-                        style={{ display: "none" }}
-                      />
+                      <input type="file" ref={fileInputRef} style={{ display: "none" }} />
                     </td>
                     <td>
                       <IconButton onClick={() => handleNavigateToProcess(it.id)}>
