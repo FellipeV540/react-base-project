@@ -31,7 +31,6 @@ const Container = styled.article`
 `;
 
 const SegmentacaoeQuantificacao = () => {
-    // Filtrar exames do tipo "Radiosinoviortese"
     const segmentacaoeQuantificacaoExames = exames.filter(exame => exame.type === "Segmentação e Quantificação");
 
     return (

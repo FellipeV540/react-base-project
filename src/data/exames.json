@@ -1,343 +1,343 @@
 [
     {
-        "type": "Dosimetria Clinica",
-        "clinicaId": 1,
-        "status": "Pendente",
-        "itens": [
-            {
-                "nomeClinica": "Clínica Àlvaro",
-                "id": 1,
-                "description": "Imagem do Cliente",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-01-01",
-                "doc": "Image.jpeg"
-            },
-            {
-                "nomeClinica": "Clínica Dias",
-                "id": 2,
-                "description": "Exame de Sangue",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Concluído",
-                "data": "2020-02-01",
-                "doc": "BloodTest.pdf"
-            }
-        ],
-        "client": {
-            "id": 1,
-            "name": "Joao",
-            "lastName": "Pedro"
+      "type": "Dosimetria Clinica",
+      "clinicaId": 1,
+      "status": "Pendente",
+      "itens": [
+        {
+          "nomeClinica": "Clínica Àlvaro",
+          "id": 1,
+          "description": "Imagem do Cliente",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-01-01",
+          "doc": "Image.jpeg"
+        },
+        {
+          "nomeClinica": "Clínica Dias",
+          "id": 2,
+          "description": "Exame de Sangue",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Concluído",
+          "data": "2020-02-01",
+          "doc": "BloodTest.pdf"
         }
+      ],
+      "client": {
+        "id": 1,
+        "name": "Joao",
+        "lastName": "Pedro"
+      }
     },
     {
-        "type": "Dosimetria Pré-Clinica",
-        "clinicaId": 1,
-        "status": "Concluído",
-        "itens": [
-            {
-                "nomeClinica": "Clínica Bittencourt",
-                "id": 3,
-                "description": "Relatório de Pesquisa",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Concluído",
-                "data": "2020-03-01",
-                "doc": "ResearchReport.docx"
-            },
-            {
-                "nomeClinica": "Clínica Chequer",
-                "id": 4,
-                "description": "Clínica 1",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-04-01",
-                "doc": "LabTest.pdf"
-            }
-        ],
-        "client": {
-            "id": 2,
-            "name": "Maria",
-            "lastName": "Silva"
+      "type": "Dosimetria Pré-Clinica",
+      "clinicaId": 1,
+      "status": "Concluído",
+      "itens": [
+        {
+          "nomeClinica": "Clínica Bittencourt",
+          "id": 3,
+          "description": "Relatório de Pesquisa",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Concluído",
+          "data": "2020-03-01",
+          "doc": "ResearchReport.docx"
+        },
+        {
+          "nomeClinica": "Clínica Chequer",
+          "id": 4,
+          "description": "Clínica 1",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-04-01",
+          "doc": "LabTest.pdf"
         }
+      ],
+      "client": {
+        "id": 2,
+        "name": "Maria",
+        "lastName": "Silva"
+      }
     },
     {
-        "type": "Modelagem Computacional",
-        "clinicaId": 2,
-        "status": "Em Progresso",
-        "itens": [
-            {
-                "nomeClinica": "Clínica Paes",
-                "id": 5,
-                "description": "Modelo 3D de Tumor",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Em Andamento",
-                "data": "2020-05-01",
-                "doc": "3DTumorModel.stl"
-            },
-            {
-                "nomeClinica": "Clínica Soares",
-                "id": 6,
-                "description": "Simulação de Radiação",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Concluído",
-                "data": "2020-06-01",
-                "doc": "RadiationSimulation.pdf"
-            }
-        ],
-        "client": {
-            "id": 3,
-            "name": "Carlos",
-            "lastName": "Souza"
+      "type": "Modelagem Computacional",
+      "clinicaId": 2,
+      "status": "Em Progresso",
+      "itens": [
+        {
+          "nomeClinica": "Clínica Paes",
+          "id": 5,
+          "description": "Modelo 3D de Tumor",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Em Andamento",
+          "data": "2020-05-01",
+          "doc": "3DTumorModel.stl"
+        },
+        {
+          "nomeClinica": "Clínica Soares",
+          "id": 6,
+          "description": "Simulação de Radiação",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Concluído",
+          "data": "2020-06-01",
+          "doc": "RadiationSimulation.pdf"
         }
+      ],
+      "client": {
+        "id": 3,
+        "name": "Carlos",
+        "lastName": "Souza"
+      }
     },
     {
-        "type": "Radiosinoviortese",
-        "clinicaId": 2,
-        "status": "Pendente",
-        "itens": [
-            {
-
-                "nomeClinica": "Clinica Pereira",
-                "id": 7,
-                "description": "Plano de Tratamento",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-07-01",
-                "doc": "TreatmentPlan.pdf"
-            },
-            {
-                "nomeClinica": "Clinica Albert",
-                "id": 8,
-                "description": "Clínica 2",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-08-01",
-                "doc": "ProcedureReport.pdf"
-            }
-        ],
-        "client": {
-            "id": 4,
-            "name": "Ana",
-            "lastName": "Oliveira"
+      "type": "Radiosinoviortese",
+      "clinicaId": 2,
+      "status": "Pendente",
+      "itens": [
+        {
+          "nomeClinica": "Clinica Pereira",
+          "id": 7,
+          "description": "Plano de Tratamento",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-07-01",
+          "doc": "TreatmentPlan.pdf"
+        },
+        {
+          "nomeClinica": "Clinica Albert",
+          "id": 8,
+          "description": "Clínica 2",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-08-01",
+          "doc": "ProcedureReport.pdf"
         }
+      ],
+      "client": {
+        "id": 4,
+        "name": "Ana",
+        "lastName": "Oliveira"
+      }
     },
     {
-        "type": "Segmentação e Quantificação",
-        "clinicaId": 3,
-        "status": "Concluído",
-        "itens": [
-            {
-                "nomeClinica": "Clínica Mendes",
-                "id": 9,
-                "description": "Segmentação de Imagem",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Concluído",
-                "data": "2020-09-01",
-                "doc": "ImageSegmentation.jpeg"
-            },
-            {
-                "nomeClinica": "Clínica Luccas",
-                "id": 10,
-                "description": "Clínica 3",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-10-01",
-                "doc": "QuantitativeAnalysis.xlsx"
-            }
-        ],
-        "client": {
-            "id": 5,
-            "name": "Lucas",
-            "lastName": "Fernandes"
+      "type": "Segmentação e Quantificação",
+      "clinicaId": 3,
+      "status": "Concluído",
+      "itens": [
+        {
+          "nomeClinica": "Clínica Mendes",
+          "id": 9,
+          "description": "Segmentação de Imagem",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Concluído",
+          "data": "2020-09-01",
+          "doc": "ImageSegmentation.jpeg"
+        },
+        {
+          "nomeClinica": "Clínica Luccas",
+          "id": 10,
+          "description": "Clínica 3",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-10-01",
+          "doc": "QuantitativeAnalysis.xlsx"
         }
+      ],
+      "client": {
+        "id": 5,
+        "name": "Lucas",
+        "lastName": "Fernandes"
+      }
     },
     {
-        "type": "Dosimetria Clinica",
-        "clinicaId": 3,
-        "status": "Em Progresso",
-        "itens": [
-            {
-                "nomeClinica": "Clínica Rodolffo",
-                "id": 11,
-                "description": "Consulta de Rotina",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Em Andamento",
-                "data": "2020-11-01",
-                "doc": "RoutineCheck.pdf"
-            },
-            {
-                "nomeClinica": "Clinica Leon",
-                "id": 12,
-                "description": "Teste de Urina",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Concluído",
-                "data": "2020-12-01",
-                "doc": "UrineTest.docx"
-            }
-        ],
-        "client": {
-            "id": 6,
-            "name": "Mariana",
-            "lastName": "Alves"
+      "type": "Dosimetria Clinica",
+      "clinicaId": 3,
+      "status": "Em Progresso",
+      "itens": [
+        {
+          "nomeClinica": "Clínica Rodolffo",
+          "id": 11,
+          "description": "Consulta de Rotina",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Em Andamento",
+          "data": "2020-11-01",
+          "doc": "RoutineCheck.pdf"
+        },
+        {
+          "nomeClinica": "Clinica Leon",
+          "id": 12,
+          "description": "Teste de Urina",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Concluído",
+          "data": "2020-12-01",
+          "doc": "UrineTest.docx"
         }
+      ],
+      "client": {
+        "id": 6,
+        "name": "Mariana",
+        "lastName": "Alves"
+      }
     },
     {
-        "type": "Dosimetria Pré-Clinica",
-        "clinicaId": 4,
-        "status": "Concluído",
-        "itens": [
-            {
-                "nomeClinica": "Clinica Eduardo",
-                "id": 13,
-                "description": "Relatório de Testes Animais",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Concluído",
-                "data": "2020-01-01",
-                "doc": "AnimalTests.pdf"
-            },
-            {
-                "nomeClinica": "Clinica Jailson",
-                "id": 14,
-                "description": "Clínica 4",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-02-01",
-                "doc": "CultureResults.docx"
-            }
-        ],
-        "client": {
-            "id": 7,
-            "name": "Bruno",
-            "lastName": "Gomes"
+      "type": "Dosimetria Pré-Clinica",
+      "clinicaId": 4,
+      "status": "Concluído",
+      "itens": [
+        {
+          "nomeClinica": "Clinica Eduardo",
+          "id": 13,
+          "description": "Relatório de Testes Animais",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Concluído",
+          "data": "2020-01-01",
+          "doc": "AnimalTests.pdf"
+        },
+        {
+          "nomeClinica": "Clinica Jailson",
+          "id": 14,
+          "description": "Clínica 4",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-02-01",
+          "doc": "CultureResults.docx"
         }
+      ],
+      "client": {
+        "id": 7,
+        "name": "Bruno",
+        "lastName": "Gomes"
+      }
     },
     {
-        "type": "Modelagem Computacional",
-        "clinicaId": 4,
-        "status": "Pendente",
-        "itens": [
-            {
-                "nomeClinica": "Clinica Manuela",
-                "id": 15,
-                "description": "Simulação de Dose",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-03-01",
-                "doc": "DoseSimulation.pdf"
-            },
-            {
-                "nomeClinica": "Clinica Luana",
-                "id": 16,
-                "description": "Modelo de Órgão",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Concluído",
-                "data": "2020-04-01",
-                "doc": "OrganModel.stl"
-            }
-        ],
-        "client": {
-            "id": 8,
-            "name": "Sofia",
-            "lastName": "Lima"
+      "type": "Modelagem Computacional",
+      "clinicaId": 4,
+      "status": "Pendente",
+      "itens": [
+        {
+          "nomeClinica": "Clinica Manuela",
+          "id": 15,
+          "description": "Simulação de Dose",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-03-01",
+          "doc": "DoseSimulation.pdf"
+        },
+        {
+          "nomeClinica": "Clinica Luana",
+          "id": 16,
+          "description": "Modelo de Órgão",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Concluído",
+          "data": "2020-04-01",
+          "doc": "OrganModel.stl"
         }
+      ],
+      "client": {
+        "id": 8,
+        "name": "Sofia",
+        "lastName": "Lima"
+      }
     },
     {
-        "type": "Radiosinoviortese",
-        "clinicaId": 5,
-        "status": "Em Progresso",
-        "itens": [
-            {
-                "nomeClinica": "Clinica Robert",
-                "id": 17,
-                "description": "Avaliação Pré-Tratamento",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Em Andamento",
-                "data": "2020-05-01",
-                "doc": "PreTreatmentEvaluation.pdf"
-            },
-            {
-                "nomeClinica": "Clinica André",
-                "id": 18,
-                "description": "Imagens Pós-Procedimento",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Concluído",
-                "data": "2020-06-01",
-                "doc": "PostProcedureImages.jpeg"
-            }
-        ],
-        "client": {
-            "id": 9,
-            "name": "Renata",
-            "lastName": "Martins"
+      "type": "Radiosinoviortese",
+      "clinicaId": 5,
+      "status": "Em Progresso",
+      "itens": [
+        {
+          "nomeClinica": "Clinica Robert",
+          "id": 17,
+          "description": "Avaliação Pré-Tratamento",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Em Andamento",
+          "data": "2020-05-01",
+          "doc": "PreTreatmentEvaluation.pdf"
+        },
+        {
+          "nomeClinica": "Clinica André",
+          "id": 18,
+          "description": "Imagens Pós-Procedimento",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Concluído",
+          "data": "2020-06-01",
+          "doc": "PostProcedureImages.jpeg"
         }
+      ],
+      "client": {
+        "id": 9,
+        "name": "Renata",
+        "lastName": "Martins"
+      }
     },
     {
-        "type": "Segmentação e Quantificação",
-        "clinicaId": 5,
-        "status": "Pendente",
-        "itens": [
-            {
-                "nomeClinica": "Clinica Julia",
-                "id": 19,
-                "description": "Análise de Volume",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-07-01",
-                "doc": "VolumeAnalysis.pdf"
-            },
-            {
-                "nomeClinica": "Clinica Victor",
-                "id": 20,
-                "description": "Clínica 5",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Concluído",
-                "data": "2020-08-01",
-                "doc": "3DSegmentation.stl"
-            },
-            {
-                "nomeClinica": "Clinica Hwang",
-                "id": 21,
-                "description": "Clínica 5",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-08-01",
-                "doc": "3DSegmentation.stl"
-            },
-            {
-                "nomeClinica": "Clinica Epstien",
-                "id": 22,
-                "description": "Análise de Volume",
-                "imgPaciente": "arquivo provisorio",
-                "imgCalibração": "arquivo provisorio2",
-                "status": "Pendente",
-                "data": "2020-07-01",
-                "doc": "VolumeAnalysis.pdf"
-            }
-        ],
-        "client": {
-            "id": 10,
-            "name": "Gabriel",
-            "lastName": "Santos"
+      "type": "Segmentação e Quantificação",
+      "clinicaId": 5,
+      "status": "Pendente",
+      "itens": [
+        {
+          "nomeClinica": "Clinica Julia",
+          "id": 19,
+          "description": "Análise de Volume",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-07-01",
+          "doc": "VolumeAnalysis.pdf"
+        },
+        {
+          "nomeClinica": "Clinica Victor",
+          "id": 20,
+          "description": "Clínica 5",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Concluído",
+          "data": "2020-08-01",
+          "doc": "3DSegmentation.stl"
+        },
+        {
+          "nomeClinica": "Clinica Hwang",
+          "id": 21,
+          "description": "Clínica 5",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-08-01",
+          "doc": "3DSegmentation.stl"
+        },
+        {
+          "nomeClinica": "Clinica Epstien",
+          "id": 22,
+          "description": "Análise de Volume",
+          "imgPaciente": "arquivo provisorio",
+          "imgCalibracao": "arquivo provisorio2",
+          "status": "Pendente",
+          "data": "2020-07-01",
+          "doc": "VolumeAnalysis.pdf"
         }
+      ],
+      "client": {
+        "id": 10,
+        "name": "Gabriel",
+        "lastName": "Santos"
+      }
     }
-]
+  ]
+  
