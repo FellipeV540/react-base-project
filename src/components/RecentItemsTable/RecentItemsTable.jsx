@@ -322,8 +322,9 @@ const RecentItemsTable = ({ exames }) => {
               )}
             </tbody>
           </table>
-          <p className="dots">. . .</p>
-          <p className="info">para ver mais, acesse algum módulo acima</p>
+          <br></br>
+          <br></br>
+          <br></br>
         </div>
       </StyledTable>
     </>

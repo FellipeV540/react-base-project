@@ -7,8 +7,8 @@ const ModuleCardContainer = styled.div`
   border: 1px solid #eee;
   border-radius: 10px;
   transition: all 0.3s ease;
-  width: 280px;
-  height: 180px;
+  width: 180px;
+  height: 125px;
   padding: 20px;
   cursor: pointer;
   display: flex;

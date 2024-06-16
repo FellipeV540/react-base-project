@@ -63,25 +63,14 @@ const Home = () => {
 
   return (
     <Base>
-      <Container>
-
-        <div className="content">
-          <h2 className="message">Bem-vindo ao Portal de Dosimetria</h2>
-          <p className="message">
-            Sua central de acesso a ferramentas e informações relevantes para o
-            seu dia a dia na área de dosimetria.
-          </p>
-          <p className="message">
-            Novos Procedimentos Pendentes
-          </p>
-          <RecentItemsTable exames={exames}/>
-        </div>
-      </Container>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
       <Modules></Modules>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Container>
+          <RecentItemsTable exames={exames}/>
+      </Container>
     </Base>
   );
 };
