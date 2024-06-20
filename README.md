@@ -28,4 +28,6 @@ Utilize o comando `npm run build` para construir uma versão pronta para produç
 
 ## Oraganização
 [Trello](https://trello.com/invite/b/XpMcKrpH/ATTI078dad2a7e6b21520095472d6615368b176C75C3/projeto)
+
+## Organização
 [Canva](https://www.canva.com/design/DAGH_PH4g6U/QPZM20dWj-Sy9oOBReMpyQ/edit)
